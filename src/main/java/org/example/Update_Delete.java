@@ -5,10 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-/**
- * Hello world!
- */
-public class App {
+public class Update_Delete {
     public static void main(String[] args) {
 //        По умолчанию класс Configuration читает конфигурацию из hibernate.properties
         Configuration configuration = new Configuration().addAnnotatedClass(Person.class);
@@ -16,14 +13,15 @@ public class App {
         Session session = sessionFactory.getCurrentSession();
         try {
             session.beginTransaction();
-            Person person1 = new Person("Test1", 30);
-            Person person2 = new Person("Test2", 35);
-            Person person3 = new Person("Test3", 37);
-//          Сохранение в таблице
-            session.save(person1);
-            session.save(person2);
-            session.save(person3);
+//            Person person = session.get(Person.class, 3);
+//            person.setName("New name");
+//            Person person = session.get(Person.class, 6);
+//            session.delete(person);
+            Person person = new Person("Some name", 50);
+            session.save(person);
             session.getTransaction().commit();
+//            Получаем id:
+            System.out.println(person.getId());
         } finally {
             sessionFactory.close();
         }
