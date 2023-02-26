@@ -1,14 +1,15 @@
 package org.example.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
- * Аннотацией @Entity помечаем класс, который связан с бд
+ * Аннотацией @Entity помечаем класс, который связан с бд.
  * Класс с @Entity должен иметь пустой конструктор и поле с аннотацией @Id
  */
 @Entity
 @Table(name = "Person")
-public class Person {
+public class PersonOneToMany {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,13 +20,23 @@ public class Person {
     
     @Column(name = "age")
     private int age;
+    @OneToMany(mappedBy = "owner")
+    private List<Item> items;
     
-    public Person() {
+    public PersonOneToMany() {
     }
     
-    public Person(String name, int age) {
+    public PersonOneToMany(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+    
+    public List<Item> getItems() {
+        return items;
+    }
+    
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
     
     public int getId() {
@@ -53,6 +64,6 @@ public class Person {
     }
     
     public String toString() {
-        return this.name + ", " + this.age;
+        return name + ", " + age;
     }
 }
