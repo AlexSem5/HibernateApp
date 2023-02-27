@@ -54,7 +54,7 @@ public class OneToMany {
 //            Не порождает SQL, но необходимо для того, чтобы в кэш все было верно
 //            items.clear();
 
-//            Удадяем человека с учётом каскадирования (null):
+//            Удаялем человека с учётом каскадирования (null):
 //            PersonOneToMany personOneToMany = session.get(PersonOneToMany.class, 3);
 //            Породит SQL запрос к БД, она сделает каскадирование и сама назначит null в БД:
 //            session.remove(personOneToMany);

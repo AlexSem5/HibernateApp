@@ -73,7 +73,6 @@ public class PersonOneToOne {
                "id=" + id +
                ", name='" + name + '\'' +
                ", age=" + age +
-               ", passport=" + passport +
                '}';
     }
 }

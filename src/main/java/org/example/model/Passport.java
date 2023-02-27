@@ -20,6 +20,7 @@ public class Passport {
     @Column(name = "passport_number")
     private int passportNumber;
     
+//    Эта сущность является owning side - владеющая сторона (владеет foreign key)
     @OneToOne
     @JoinColumn(name = "person_id", referencedColumnName = "id")
     private PersonOneToOne owner;
@@ -61,7 +62,6 @@ public class Passport {
         return "Passport{" +
                "id=" + id +
                ", passportNumber=" + passportNumber +
-               ", owner=" + owner +
                '}';
     }
 }
