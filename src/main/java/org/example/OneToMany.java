@@ -69,6 +69,20 @@ public class OneToMany {
             item.setOwner(personOneToMany);
             personOneToMany.getItems().add(item);
             
+//          Метод используется, чтобы подгрузить связанные сущности (Тема Ленивая загрузка):
+//            Hibernate.initialize(person.getItems());
+
+//            Сессию можно открывать несколько раз и использовать метод merge():
+//             session = sessionFactory.getCurrentSession();
+//             session.beginTransaction();
+//            person = (Person) session.merge(person);
+//            Hibernate.initialize(person.getItems());
+//            session.getTransaction().commit();
+
+//            После закрытия сессии связанные товары будут подгружаться:
+//            sout(person.getItems());
+            
+            
             session.getTransaction().commit();
         } finally {
             sessionFactory.close();

@@ -19,7 +19,7 @@ INSERT INTO person(name, age) VALUES ('Katy',39);
 
 INSERT INTO item(person_id, item_name) VALUES (1,'Book');
 INSERT INTO item(person_id, item_name) VALUES (1,'AirPods');
-INSERT INTO item(person_id, item_name) VALUES (2,'Iphone');
+INSERT INTO item(person_id, item_name) VALUES (1,'Iphone');
 INSERT INTO item(person_id, item_name) VALUES (3,'Kindle');
 INSERT INTO item(person_id, item_name) VALUES (3,'TV');
 INSERT INTO item(person_id, item_name) VALUES (3,'PlayStation');
