@@ -24,6 +24,7 @@ public class PersonOneToMany {
     @Column(name = "age")
     private int age;
     @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
+//    Если сохраняем человека, то автоматически сохраняется связанная сущность:
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private List<Item> items;
     

@@ -24,6 +24,7 @@ public class Cascade {
 //          метод persist похож на метод save, но учитывает каскадирование:
 //           за нас hibernate сделает session.persist(item)
 //           session.persist(person);
+//            В курсе используем метод save(), т.к. есть аннотация @Cascade:
 //            session.save(person);
             
             PersonOneToMany personOneToMany = new PersonOneToMany("New cascade test", 39);

@@ -15,6 +15,7 @@ public class HQL {
         Session session = sessionFactory.getCurrentSession();
         try {
             session.beginTransaction();
+//            HQL работает с сущностями @Entity, а не с таблицами БД:
 //            List<Person> people = session.createQuery("from Person where name like 'T%'").getResultList();
 //            people.forEach(person -> System.out.println(person));
             session.createQuery("update Person set name = 'Test' where age = 30").executeUpdate();
